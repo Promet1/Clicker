@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://ekmaihibrkms"]
+
+[ext_resource type="Texture2D" uid="uid://c7yxb7f6siglx" path="res://assets/background.png" id="1_5kiuu"]
+[ext_resource type="Script" uid="uid://bkq8k822vbby4" path="res://script/game.gd" id="1_33cqm"]
+[ext_resource type="Texture2D" uid="uid://buc6x76ru3swa" path="res://assets/coin.png" id="2_dbls1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_81klu"]
+font_size = 191
+
+[node name="Game" type="Node2D" unique_id=1193700999]
+script = ExtResource("1_33cqm")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1580411386]
+position = Vector2(540, 960)
+texture = ExtResource("1_5kiuu")
+
+[node name="CoinButton" type="TextureButton" parent="." unique_id=1497476087]
+offset_left = 265.0
+offset_top = 945.0
+offset_right = 817.9741
+offset_bottom = 1495.0002
+texture_normal = ExtResource("2_dbls1")
+
+[node name="Counter" type="Label" parent="." unique_id=524360127]
+offset_top = 420.0
+offset_right = 1080.0
+offset_bottom = 681.00183
+text = "0"
+label_settings = SubResource("LabelSettings_81klu")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[connection signal="pressed" from="CoinButton" to="." method="_on_coin_button_pressed"]
